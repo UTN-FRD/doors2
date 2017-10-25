@@ -1,0 +1,15 @@
+<p>
+  <strong>Codigo:</strong>
+  <%= key.codigo %>
+</p>
+ 
+<p>
+  <strong>Numero de Copia:</strong>
+  <%= key.numero_de_copia %>
+</p>
+
+<p>
+  <%= link_to 'Eliminar Llave', [key.gate, key],
+               method: :delete,
+               data: { confirm: '¿Estas seguro?' } %>
+</p>

@@ -1,0 +1,29 @@
+<h1>Lista de Puertas</h1>
+
+<%= link_to 'Nueva Puerta', new_gate_path, class: 'btn btn-primary btn-lg' %>
+ 
+<table class="table table-striped">
+  <tr>
+    <th>Codigo</th>
+    <th>Ubicacion</th>
+    <th>Descripcion</th>
+    <th>Area</th>
+    <th> </th>
+    <th> </th>
+    <th> </th>
+  </tr>
+ 
+  <% @gates.each do |gate| %>
+    <tr>
+      <td><%= gate.codigo %></td>
+      <td><%= gate.ubicacion %></td>
+      <td><%= gate.descripcion %></td>
+      <td><%= gate.area %></td>
+      <td><%= link_to 'Mostrar', gate_path(gate) %></td>
+      <td><%= link_to 'Editar', edit_gate_path(gate) %></td>
+       <td><%= link_to 'Eliminar', gate_path(gate),
+              method: :delete,
+              data: { confirm: '¿Estas seguro?' } %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,66 @@
+<div class="container"> 
+
+  <%= form_with model: @gate, local: true do |form| %>
+ 
+  <% if @gate.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@gate.errors.count, "error") %>, no se puede guardar esta puerta:
+      </h2>
+      <ul>
+        <% @gate.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+   <div class="form-group">
+    <%= form.label :codigo %>
+    <%= form.text_field :codigo, :class => "form-control", placeholder: "Número" %>
+  </div>
+ 
+  <div class="form-group">
+    <%= form.label :ubicacion %>
+    <%= form.text_field :ubicacion, :class => "form-control", placeholder: "..." %> 
+  </div>
+
+  <div class="form-group">
+    <%= form.label :descripcion %>
+    <%= form.text_field :descripcion, :class => "form-control", placeholder: "Observaciones" %>
+  </div>
+
+
+  <h4>Área</h4>
+  <div class="checkbox">
+      
+    <label>
+      <%= check_box_tag "laboratorio", "yes" %>
+      Laboratorio
+    </label>
+
+    <label>
+      <%= check_box_tag "oficina", "yes"%>
+      Oficina
+    </label>
+
+    <label>
+      <%= check_box_tag "aula", "yes" %>
+      Aula
+    </label>
+
+    <label>
+      <%= check_box_tag "otro", "yes" %>
+      Otro
+    </label>
+  </div>
+
+
+  <div class="form-group">
+    <%= form.submit :class=> "btn btn-default"%>
+  </div>
+</div>
+
+   
+ 
+<% end %>

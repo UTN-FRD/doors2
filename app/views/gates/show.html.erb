@@ -1,0 +1,30 @@
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @gate.codigo %>
+</p>
+ 
+<p>
+  <strong>Ubicacion:</strong>
+  <%= @gate.ubicacion %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @gate.descripcion %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @gate.area %>
+</p>
+
+
+<h2>Llaves</h2>
+<%= render @gate.keys %>
+
+<h2>Agregar Llave</h2>
+<%= render 'keys/form' %>
+
+<%= link_to 'Editar', edit_gate_path(@gate) %> |
+<%= link_to 'Volver', gates_path %>

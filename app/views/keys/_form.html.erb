@@ -1,0 +1,14 @@
+<%= form_with(model: [ @gate, @gate.keys.build ]) do |form| %>
+
+  <p>
+    <%= form.label :codigo %><br>
+    <%= form.text_field :codigo %>
+  </p>
+  <p>
+    <%= form.label :numero_de_copia %><br>
+    <%= form.text_field :numero_de_copia %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
