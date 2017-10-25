@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   	resources :keys
   end
 
-  root 'welcome#index'
+  root 'gates#index'
 end
