@@ -33,26 +33,10 @@
 
   <h4>Área</h4>
   <div class="checkbox">
-      
-    <label>
-      <%= check_box_tag "laboratorio", "yes" %>
-      Laboratorio
-    </label>
-
-    <label>
-      <%= check_box_tag "oficina", "yes"%>
-      Oficina
-    </label>
-
-    <label>
-      <%= check_box_tag "aula", "yes" %>
-      Aula
-    </label>
-
-    <label>
-      <%= check_box_tag "otro", "yes" %>
-      Otro
-    </label>
+  <% Area.all.each do |rt| %>
+    <%= form.radio_button :descripcion, rt.id %>
+    <%= form.label :descripcion, rt.descripcion %>
+  <% end %>
   </div>
 
 
