@@ -34,8 +34,9 @@
   <h4>Área</h4>
   <div class="checkbox">
   <% Area.all.each do |rt| %>
-    <%= form.radio_button :descripcion, rt.id %>
-    <%= form.label :descripcion, rt.descripcion %>
+    <%= form.radio_button :area, rt.descripcion %>
+    <%= form.label :area, rt.descripcion %>
+
   <% end %>
   </div>
 
